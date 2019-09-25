@@ -51,7 +51,6 @@ class Search extends React.Component {
     )
       .then(response => response.json())
       .then(responseJson => {
-        console.log('responseJson', responseJson);
         this.state.dataSource = responseJson.predictions;
         this.setState(this.state);
       })

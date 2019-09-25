@@ -6,27 +6,21 @@ import {
   setDefaultHeaderLayout,
 } from '~/routes/headerUtils';
 
-import Map from './containers/MapView';
-import Search from './componenten/Search';
+import Intro from './index';
 
 export const ROUTE_NAMES = {
-  MAP: 'MAP',
-  SEARCH: 'SEARCH',
+  INTRO: 'INTRO',
 };
 
 const RootStack = createStackNavigator(
   {
-    [ROUTE_NAMES.MAP]: {
-      screen: Map,
-      navigationOptions: ({navigation}) => setHiddenHeaderLayout(navigation),
-    },
-    [ROUTE_NAMES.SEARCH]: {
-      screen: Search,
+    [ROUTE_NAMES.INTRO]: {
+      screen: Intro,
       navigationOptions: ({navigation}) => setHiddenHeaderLayout(navigation),
     },
   },
   {
-    initialRouteName: ROUTE_NAMES.MAP,
+    initialRouteName: ROUTE_NAMES.INTRO,
     mode: Platform.OS === 'ios' ? 'card' : 'modal',
     headerMode: 'screen',
   },

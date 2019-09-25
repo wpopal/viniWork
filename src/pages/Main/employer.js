@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, ScrollView} from 'react-native';
-import {Text, ListItem} from 'react-native-elements';
+import {View, ScrollView, TouchableOpacity} from 'react-native';
+import {Text, Avatar} from 'react-native-elements';
 import {withNavigation} from 'react-navigation';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
@@ -9,6 +9,7 @@ import {Creators as MainCreators} from '~/store/ducks/main';
 class Employer extends React.Component {
   constructor(props) {
     super(props);
+    console.log('props', props);
   }
 
   state = {
@@ -68,22 +69,55 @@ class Employer extends React.Component {
       },
     ],
   };
+
   render() {
+    const datax = this.props.data;
+    const {loading, data} = datax;
     return (
       <View>
-        <ScrollView>
-          <Text h3>Việc Làm Tốt Nhất</Text>
-          {this.state.data.map((l, i) => (
-            <ListItem
-              key={i}
-              leftAvatar={{source: {uri: l.avata}}}
-              title={l.title}
-              subtitle={l.dec}
-              onPress={() => this.props.navigation.navigate('DETAIL')}
-              bottomDivider
-            />
-          ))}
-        </ScrollView>
+        {loading && (
+          <View>
+            <Text>Loading...</Text>
+          </View>
+        )}
+        {!loading && (
+          <ScrollView style={{marginBottom: 100}}>
+            <Text h3>Việc Làm Tốt Nhất</Text>
+            {data.jobs.map((l, i) => (
+              <TouchableOpacity
+                style={{margin: 20}}
+                key={i}
+                onPress={() => this.props.navigation.navigate('DETAIL')}>
+                <Avatar
+                  small
+                  rounded
+                  source={{uri: l.employer.avatar}}
+                  onPress={() => console.log('Works!')}
+                  activeOpacity={0.7}
+                />
+                <View>
+                  <Text style={{fontWeight: 'bold', fontSize: 18}}>
+                    {l.post_title}
+                  </Text>
+                  <Text
+                    numberOfLines={2}
+                    style={{color: '#767676', fontSize: 16}}>
+                    {l.post_excerpt}
+                  </Text>
+                  <View style={{flexDirection: 'row'}}>
+                    {l.location.map((x, y) => (
+                      <Text
+                        key={y}
+                        style={{color: '#9a9a9a', fontSize: 16, margin: 5}}>
+                        {x.name}
+                      </Text>
+                    ))}
+                  </View>
+                </View>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+        )}
       </View>
     );
   }

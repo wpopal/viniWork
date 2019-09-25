@@ -9,7 +9,6 @@ export default class menudemo extends React.Component {
   state = {};
 
   render() {
-    console.log('this.props', this.props);
 
     return (
       <View style={{backgroundColor: '#fff', height: '100%'}}>

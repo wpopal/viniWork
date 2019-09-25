@@ -2,9 +2,9 @@ import Immutable from 'seamless-immutable';
 
 // creat action
 export const Types = {
-  GET_REQUEST: 'main/GET_REQUEST',
-  GET_SUCCESS: 'main/GET_SUCCESS',
-  GET_FAILURE: 'main/GET_FAILURE',
+  GET_REQUEST: 'emp/GET_REQUEST',
+  GET_SUCCESS: 'emp/GET_SUCCESS',
+  GET_FAILURE: 'emp/GET_FAILURE',
 };
 
 const initialState = Immutable({
@@ -14,22 +14,22 @@ const initialState = Immutable({
 });
 
 export const Creators = {
-  getmainRequest: () => ({
+  getEmpRequest: () => ({
     type: Types.GET_REQUEST,
   }),
 
-  getmainSuccess: data => ({
+  getEmpSuccess: data => ({
     type: Types.GET_SUCCESS,
     payload: {data},
   }),
 
-  getmainFailure: () => ({
+  getEmpFailure: () => ({
     type: Types.GET_FAILURE,
   }),
 };
 
 //Reducers
-const main = (state = initialState, action) => {
+const emp = (state = initialState, action) => {
   switch (action.type) {
     case Types.GET_REQUEST:
       return {
@@ -56,4 +56,4 @@ const main = (state = initialState, action) => {
   }
 };
 
-export default main;
+export default emp;

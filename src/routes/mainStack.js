@@ -5,16 +5,18 @@ import React from 'react';
 import {createAppContainer} from 'react-navigation';
 import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
 import MainRoutes from '../pages/Main/routes';
+import EmpRoutes from '../pages/Employer/routes';
 import MapRoutes from '../pages/Maps/routes';
 
 import isEqualsOrLargestThanIphoneX from '~/utils/isEqualsOrLargestThanIphoneX';
 import appStyles from '~/styles';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faHome, faMap} from '@fortawesome/free-solid-svg-icons';
+import {faHome, faMap, faCity} from '@fortawesome/free-solid-svg-icons';
 
 export const ROUTE_NAMES = {
   HOME: 'HOME',
   MAP: 'MAP',
+  EMP: 'EMP',
 };
 
 type Props = {
@@ -26,6 +28,9 @@ const getTabIcon = (icon: string): Object => ({tintColor}: Props) => {
 };
 const getMapIcon = (icon: string): Object => ({tintColor}: Props) => {
   return <FontAwesomeIcon icon={faMap} color={tintColor} />;
+};
+const getEmpIcon = (icon: string): Object => ({tintColor}: Props) => {
+  return <FontAwesomeIcon icon={faCity} color={tintColor} />;
 };
 
 const ApplicationTabs = createMaterialTopTabNavigator(
@@ -40,6 +45,12 @@ const ApplicationTabs = createMaterialTopTabNavigator(
       screen: MapRoutes,
       navigationOptions: {
         tabBarIcon: getMapIcon('map'),
+      },
+    },
+    [ROUTE_NAMES.EMP]: {
+      screen: EmpRoutes,
+      navigationOptions: {
+        tabBarIcon: getEmpIcon('map'),
       },
     },
   },

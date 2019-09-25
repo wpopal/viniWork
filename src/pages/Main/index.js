@@ -4,7 +4,7 @@ import {Text} from 'react-native-elements';
 import {withNavigation} from 'react-navigation';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {Creators as MainCreators} from '~/store/ducks/intro';
+import {Creators as MainCreators} from '~/store/ducks/main';
 import Employer from './employer';
 import {Drawer} from 'native-base';
 import SideBar from './menudemo';
@@ -26,8 +26,13 @@ class Home extends React.Component {
     this._drawer._root.open();
   };
 
+  componentDidMount(): void {
+    this.props.getmainRequest();
+  }
+
   render() {
-    console.log('this.props', this.props);
+    const {getMainSaga} = this.props;
+    const {loading, error, data} = getMainSaga;
     return (
       <Drawer
         ref={ref => {
@@ -49,11 +54,22 @@ class Home extends React.Component {
               <FontAwesomeIcon icon={faBars} />
             </TouchableOpacity>
             <Text>Vini Work</Text>
-             <TouchableOpacity onPress={() => this.props.navigation.navigate('SEARCH')}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('SEARCH')}>
               <FontAwesomeIcon icon={faSearch} />
             </TouchableOpacity>
           </View>
-          <Employer />
+          {loading && (
+            <View>
+              <Text>Loading...</Text>
+            </View>
+          )}
+          {error && (
+            <View>
+              <Text>ERROR !!!</Text>
+            </View>
+          )}
+          {!loading && !error && <Employer data={this.props.getMainSaga} />}
         </View>
       </Drawer>
     );
@@ -61,9 +77,8 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log('state', state);
   return {
-    getIntroSaga: state.intro,
+    getMainSaga: state.main,
   };
 };
 

@@ -57,7 +57,6 @@ class HomeLocator extends Component {
         this.onRegionChangeComplete(region);
       },
       error => {
-        console.log(JSON.stringify(error));
       },
       {enableHighAccuracy: false},
     );
@@ -75,7 +74,6 @@ class HomeLocator extends Component {
       newState.text = data.results[0].formatted_address;
     }
     this.setState(newState);
-    console.log('this.state', this.state);
   };
 
   onPanDrag = () => {

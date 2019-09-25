@@ -34,7 +34,6 @@ class menudemo extends React.Component {
   state = {};
 
   render() {
-    console.log('this.props', this.props);
     const list = [
       {
         title: 'Cập nhật hồi sơ',

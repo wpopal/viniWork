@@ -4,6 +4,7 @@ import MainStack from './mainStack';
 
 export const ROUTE_NAMES = {
   MAIN_STACK: 'MAIN_STACK',
+  EMPLOYER: 'EMPLOYER',
 };
 
 const InitialStack = createSwitchNavigator(

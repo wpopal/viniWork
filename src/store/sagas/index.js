@@ -1,13 +1,13 @@
 import {all, takeLatest, takeEvery} from 'redux-saga/effects';
-import {Types as HomeTypes} from '~/store/ducks/main';
-import {Types as IntroTypes} from '~/store/ducks/intro';
+import {Types as MainTypes} from '~/store/ducks/main';
+import {Types as EmpTypes} from '~/store/ducks/employer';
 
 import {mainRequest} from './main';
-import {getIntroSaga} from './intro';
+import {empRequest} from './employer';
 
 export default function* rootSaga() {
   return yield all([
-    takeLatest(HomeTypes.GET_REQUEST, mainRequest),
-    takeLatest(IntroTypes.GET_INTRO, getIntroSaga),
+    takeLatest(MainTypes.GET_REQUEST, mainRequest),
+    takeLatest(EmpTypes.GET_REQUEST, empRequest),
   ]);
 }

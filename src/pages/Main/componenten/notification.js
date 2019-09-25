@@ -25,7 +25,6 @@ export default class menudemo extends React.Component {
   state = {};
 
   render() {
-    console.log('this.props', this.props);
     const list = [
       {
         name: 'Amy Farha',
