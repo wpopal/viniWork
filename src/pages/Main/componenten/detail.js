@@ -174,9 +174,9 @@ class Employer extends React.Component {
     ],
     index: 0,
     routes: [
-      {key: 'page1', title: 'Thông tin'},
-      {key: 'page2', title: 'Công ty'},
-      {key: 'page3', title: 'Việc khác'},
+      {key: 'page1', title: 'Information'},
+      {key: 'page2', title: 'Company'},
+      {key: 'page3', title: 'Other works'},
     ],
   };
 
@@ -210,7 +210,7 @@ class Employer extends React.Component {
                 Đăng nhập để xem mức lương
               </Text>
             </TouchableOpacity>
-            <Text>1113 lượt xem - Hết hạn trong 16 ngày</Text>
+            <Text>1113 view - Expires in 16 days</Text>
             <Button buttonStyle={{margin: 20,backgroundColor:'#cc722a'}} title="Nộp Đơn" />
           </View>
           <TabView

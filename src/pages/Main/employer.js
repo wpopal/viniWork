@@ -82,7 +82,7 @@ class Employer extends React.Component {
         )}
         {!loading && (
           <ScrollView style={{marginBottom: 100}}>
-            <Text h3>Việc Làm Tốt Nhất</Text>
+            <Text h3>Best Job</Text>
             {data.jobs.map((l, i) => (
               <TouchableOpacity
                 style={{margin: 20}}

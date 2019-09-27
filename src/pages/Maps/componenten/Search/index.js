@@ -85,15 +85,15 @@ class Search extends React.Component {
               width: '100%',
               height: 60,
             }}>
-            <Text>Từ khóa</Text>
+            <Text>Key word : </Text>
             <Input
               style={{
                 paddingHorizontal: 16,
                 margin: 10,
               }}
-              placeholder="Công việc, công ty ...v..v.."
+              placeholder="Work, company ... v..v .."
             />
-            <Text>Địa điểm tìm kiếm :</Text>
+            <Text>Search location:</Text>
             <Input
               style={{
                 paddingHorizontal: 16,
@@ -136,7 +136,7 @@ class Search extends React.Component {
           </KeyboardAvoidingView>
         </View>
         <View style={{marginTop: 30, width: '100%'}}>
-          <Text>Khoảng cách : </Text>
+          <Text>Range :</Text>
           <Slider
             step={0.5}
             maximumValue={15}
@@ -147,27 +147,27 @@ class Search extends React.Component {
           <Text>KM: {this.state.value}</Text>
         </View>
         <View style={{marginTop: 30, width: '100%'}}>
-          <Text>Cấp bậc :</Text>
+          <Text>Rank :</Text>
           <RNPickerSelect
             onValueChange={value => console.log(value)}
-            items={[
-              {label: 'Trưởng phòng', value: 'truongphong'},
-              {label: 'Giám đốc va cao hơn', value: 'giamdocvacaohon'},
-              {label: 'Nhân viên', value: 'nhanvien'},
-              {label: 'Mới tốt nghiệp', value: 'sinhvien'},
+              items={[
+              {label: 'Manager', value: 'Manager'},
+              {label: 'Director and higher', value: 'DirectorAndHigher'},
+              {label: 'Employees', value: 'Employees'},
+              {label: 'Student', value: 'Student'},
             ]}
           />
         </View>
         <View style={{marginTop: 30, width: '100%'}}>
-          <Text>Mức lương :</Text>
+          <Text>Wage :</Text>
           <RNPickerSelect
             onValueChange={value => console.log(value)}
-            items={[
-              {label: 'Dưới 500 USD', value: '<500'},
+             items={[
+              {label: 'Less than 500 USD', value: '<500'},
               {label: '500 - 1000 USD', value: '500-1000'},
               {label: '1000 - 1500 USD', value: '1000-1500'},
               {label: '1500 - 2000 USD', value: '1500-2000'},
-              {label: 'Trên 2000 USD', value: '>2000'},
+              {label: 'Over 2000 USD', value: '>2000'},
             ]}
           />
         </View>

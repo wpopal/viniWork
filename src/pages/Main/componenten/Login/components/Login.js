@@ -80,7 +80,6 @@ class LoginComponent extends Component {
   _forgotPasswordTextAnimation = new Animated.Value(0);
 
   componentDidMount() {
-
     Animated.stagger(100, [
       Animated.timing(this._emailInputFieldAnimation, {
         toValue: 1,
@@ -115,7 +114,7 @@ class LoginComponent extends Component {
     type: string,
     style: Object,
   ): Object => {
-    return <Input placeholder={placeholder} iconName={iconName} type={type}/>;
+    return <Input placeholder={placeholder} iconName={iconName} type={type} />;
   };
 
   renderForgotPasswordText = (): Object => {
@@ -166,37 +165,6 @@ class LoginComponent extends Component {
               style={{color: '#fff'}}
               size={20}
               icon={faFacebookF}
-            />
-          </View>
-          <Text
-            style={{
-              paddingLeft: 10,
-              fontFamily: 'Roboto-Bold',
-            }}>
-            Facebook
-          </Text>
-        </SocialButtonWrapper>
-
-        <SocialButtonWrapper
-          onPress={() =>
-            this.props.navigation.navigate(ROUTE_NAMES.MAIN_STACK)
-          }>
-          <View
-            style={{
-              height: '75%',
-              aspectRatio: 1 / 1,
-              backgroundColor: '#c93d36',
-              borderTopRightRadius: 50,
-              borderTopLeftRadius: 50,
-              borderBottomLeftRadius: 50,
-              borderBottomRightRadius: 50,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <FontAwesomeIcon
-              style={{color: '#fff'}}
-              size={20}
-              icon={faGoogle}
             />
           </View>
           <Text

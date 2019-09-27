@@ -20,7 +20,6 @@ export default class menudemo extends React.Component {
   }
 
   uploadImg = () => {
-    console.log('ádasdasdasasdas');
     ImagePicker.showImagePicker(options, response => {
       console.log('Response = ', response);
 
@@ -78,24 +77,24 @@ export default class menudemo extends React.Component {
           />
         </View>
         <View style={{width: '100%'}}>
-          <Text>Họ và tên :</Text>
+          <Text>Name :</Text>
           <Input />
-          <Text>Số điện thoại :</Text>
+          <Text>Phone number :</Text>
           <Input />
-          <Text>địa chỉ mail:</Text>
+          <Text>Email :</Text>
           <Input />
-          <Text>Chức vụ :</Text>
-          <Input />
-
-          <Text>Cấp bậc</Text>
+          <Text>Position :</Text>
           <Input />
 
-          <Text>Số năm kinh nghiệm</Text>
-          <Input />
-          <Text>Bằng cấp</Text>
+          <Text>Rank :</Text>
           <Input />
 
-          <Text>Ngành nghề mong muốn :</Text>
+          <Text>Experience :</Text>
+          <Input />
+          <Text>Degree :</Text>
+          <Input />
+
+          <Text>Desired occupations :</Text>
           <Input />
           <Button title="Save" />
         </View>

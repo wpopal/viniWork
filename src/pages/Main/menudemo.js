@@ -11,16 +11,16 @@ class menudemo extends React.Component {
 
   redirects = item => {
     switch (item) {
-      case 'Cập nhật hồi sơ':
+      case 'Updated profile':
         this.props.navigation.navigate('UPDATEP');
         break;
       case 'Tin nhắn':
         this.props.navigation.navigate('INBOX');
         break;
-      case 'Thông báo':
+      case 'Message':
         this.props.navigation.navigate('NOTI');
         break;
-      case 'Liên hệ':
+      case 'Contact':
         this.props.navigation.navigate('ABOU');
         break;
       case 'Login':
@@ -36,19 +36,19 @@ class menudemo extends React.Component {
   render() {
     const list = [
       {
-        title: 'Cập nhật hồi sơ',
+        title: 'Updated profile',
         icon: 'av-timer',
       },
       {
-        title: 'Tin nhắn',
+        title: 'Message',
         icon: 'flight-takeoff',
       },
       {
-        title: 'Thông báo',
+        title: 'Notification',
         icon: 'flight-takeoff',
       },
       {
-        title: 'Liên hệ',
+        title: 'Contact',
         icon: 'flight-takeoff',
       },
       {
