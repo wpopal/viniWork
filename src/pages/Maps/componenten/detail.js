@@ -28,13 +28,13 @@ class Employer extends React.Component {
   FirstRoute = () => (
     <ScrollView style={[styles.scene]}>
       <View>
-        <Text h4>CÁC PHÚC LỢI DÀNH CHO BẠN</Text>
+        <Text h4>BENEFITS FOR YOU</Text>
         <Text>Lương thưởng hấp dẫn</Text>
         <Text> BHXH, BHYT, BHTN theo quy định của Luật lao động</Text>
         <Text>Môi trường làm việc chuyên nghiệp, năng động</Text>
       </View>
       <View>
-        <Text h4>MÔ TẢ CÔNG VIỆC</Text>
+        <Text h4>JOB DESCRIPTION</Text>
         <Text>Số lượng: 10 người (8 nam và 2 nữ) dưới 30 tuổi</Text>
         <Text>
           - Giám định linh kiện (ngoại quan, kích thước, yêu cầu kỹ thuật,….) và
@@ -49,7 +49,7 @@ class Employer extends React.Component {
         <Text> - Quản lý tiến độ sản xuất các dòng máy mới</Text>
       </View>
       <View>
-        <Text h4>YÊU CẦU CÔNG VIỆC</Text>
+        <Text h4>JOB REQUIREMENTS</Text>
         <Text>
           - Ứng viên tốt nghiệp từ Đại học trở lên chuyên ngành liên quan đến Cơ
           khí, Cơ điện tử, Vật lý, Hóa học, Vật liệu...

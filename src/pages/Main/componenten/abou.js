@@ -12,8 +12,8 @@ export default class menudemo extends React.Component {
 
     return (
       <View style={{backgroundColor: '#fff', height: '100%'}}>
-        <Text h3>Về chúng tôi</Text>
-        <Text>Chào mừng bạn đến với ViniWork</Text>
+        <Text h3>About us</Text>
+        <Text>Welcome to ViniWork</Text>
       </View>
     );
   }

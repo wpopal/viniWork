@@ -150,7 +150,7 @@ class Search extends React.Component {
           <Text>Rank :</Text>
           <RNPickerSelect
             onValueChange={value => console.log(value)}
-              items={[
+            items={[
               {label: 'Manager', value: 'Manager'},
               {label: 'Director and higher', value: 'DirectorAndHigher'},
               {label: 'Employees', value: 'Employees'},
@@ -162,7 +162,7 @@ class Search extends React.Component {
           <Text>Wage :</Text>
           <RNPickerSelect
             onValueChange={value => console.log(value)}
-             items={[
+            items={[
               {label: 'Less than 500 USD', value: '<500'},
               {label: '500 - 1000 USD', value: '500-1000'},
               {label: '1000 - 1500 USD', value: '1000-1500'},
